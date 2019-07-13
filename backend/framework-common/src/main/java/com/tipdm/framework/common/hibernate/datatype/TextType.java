@@ -1,4 +1,4 @@
-package com.tipdm.framework.persist.datatype;
+package com.tipdm.framework.common.hibernate.datatype;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SessionImplementor;
@@ -14,18 +14,18 @@ import java.sql.Types;
  * Created by zhoulong on 2016/12/10.
  * E-mail:zhoulong8513@gmail.com
  */
-public class JsonType implements UserType {
+public class TextType implements UserType {
 
     /**
      * Return the SQL type codes for the columns mapped by this type. The
      * codes are defined on <tt>java.sql.Types</tt>.
      *
      * @return int[] the typecodes
-     * @see java.sql.Types
+     * @see Types
      */
     @Override
     public int[] sqlTypes() {
-        return new int[] { Types.JAVA_OBJECT};
+        return new int[] { Types.LONGNVARCHAR};
     }
 
     /**
@@ -74,9 +74,9 @@ public class JsonType implements UserType {
      * @param names   the column names
      * @param session
      * @param owner   the containing entity  @return Object
-     * @throws org.hibernate.HibernateException
+     * @throws HibernateException
      *
-     * @throws java.sql.SQLException
+     * @throws SQLException
      */
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
@@ -95,9 +95,9 @@ public class JsonType implements UserType {
      * @param value   the object to write
      * @param index   statement parameter index
      * @param session
-     * @throws org.hibernate.HibernateException
+     * @throws HibernateException
      *
-     * @throws java.sql.SQLException
+     * @throws SQLException
      */
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
@@ -141,7 +141,7 @@ public class JsonType implements UserType {
      *
      * @param value the object to be cached
      * @return a cachable representation of the object
-     * @throws org.hibernate.HibernateException
+     * @throws HibernateException
      *
      */
     @Override
@@ -156,7 +156,7 @@ public class JsonType implements UserType {
      * @param cached the object to be cached
      * @param owner  the owner of the cached object
      * @return a reconstructed object from the cachable representation
-     * @throws org.hibernate.HibernateException
+     * @throws HibernateException
      *
      */
     @Override

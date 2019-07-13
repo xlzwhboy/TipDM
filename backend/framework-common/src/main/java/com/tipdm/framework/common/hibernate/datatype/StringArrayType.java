@@ -1,4 +1,4 @@
-package com.tipdm.framework.persist.datatype;
+package com.tipdm.framework.common.hibernate.datatype;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SessionImplementor;

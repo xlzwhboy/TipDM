@@ -1,4 +1,4 @@
-package com.tipdm.framework.persist.datatype;
+package com.tipdm.framework.common.hibernate.datatype;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SessionImplementor;
@@ -14,7 +14,7 @@ import java.sql.Types;
  * Created by zhoulong on 2016/12/10.
  * E-mail:zhoulong8513@gmail.com
  */
-public class TextType implements UserType {
+public class JsonType implements UserType {
 
     /**
      * Return the SQL type codes for the columns mapped by this type. The
@@ -25,7 +25,7 @@ public class TextType implements UserType {
      */
     @Override
     public int[] sqlTypes() {
-        return new int[] { Types.LONGNVARCHAR};
+        return new int[] { Types.JAVA_OBJECT};
     }
 
     /**
